@@ -1,0 +1,1 @@
+xjc -p com.pansky.integration.common.soa.xmlBean platformProtocol.xsd

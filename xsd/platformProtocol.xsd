@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- 编辑使用 XMLSpy v2005 发行版 3 U (http://www.altova.com) 由 any (any) -->
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by  () -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by yaoym (dc) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.chinatax.gov.cn/tirip/dataspec" targetNamespace="http://www.chinatax.gov.cn/tirip/dataspec" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="tiripPackage" type="tiripPackageType">
+		<xs:annotation>
+			<xs:documentation>外部系统协议报文</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="returnStateType">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>表示本次交易的执行状态</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnMessage" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>表示本次交易的返回信息</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="identityType">
+		<xs:sequence>
+			<xs:element name="serviceId">
+				<xs:annotation>
+					<xs:documentation>由服务发起方提供，存放该次交易的服务类别,表示业务服务标识</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="channelId">
+				<xs:annotation>
+					<xs:documentation>由服务发起方提供，该标识表示发起方的标识，表示外部渠道的标识。</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="globalBusinessId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>报文识别号，可唯一标识一个报文</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="password" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该标识表示请求的访问口令</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contentControlType">
+		<xs:sequence>
+			<xs:element name="zip" type="zipType" minOccurs="0"/>
+			<xs:element name="encrypt" type="encryptType" minOccurs="0"/>
+			<xs:element name="code" type="codeType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="businessContentType">
+		<xs:sequence>
+			<xs:element name="subPackage" type="subPackageType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="zipType">
+		<xs:sequence>
+			<xs:element name="isZip" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="zipType" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="encryptType">
+		<xs:sequence>
+			<xs:element name="isEncrypt" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="encryptType" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="codeType">
+		<xs:sequence>
+			<xs:element name="isCode" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="codeType" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="subPackageType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>包编号</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="content" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>业务体内容</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="paramList" type="paramListType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>报文内容相关处理参数,例如文件名</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tiripPackageType">
+		<xs:sequence>
+			<xs:element name="identity" type="identityType">
+				<xs:annotation>
+					<xs:documentation>该部分负责提供整个交易过程中的标识</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contentControl" type="contentControlType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该部分负责标识该次交易输入报文业务体内容的压缩以及安全控制</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="routerSession" type="routerSessionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该部分负责路由相关的信息存储，采用属性值对的方式对其进行存储</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="businessContent" type="businessContentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该部分负责存储业务体内容，可以为一个或多个包</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnState" type="returnStateType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该部分负责提供交易的执行状态,编号以及返回提示信息</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="paramListType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>路由属性名</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>路由属性值</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="routerSessionType">
+		<xs:sequence>
+			<xs:element name="paramList" type="paramListType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

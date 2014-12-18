@@ -1,0 +1,80 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,select,font
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: 12px/1.5 helvetica, tahoma, verdana, arial, ËÎÌו, sans-serif;
+}
+.Map_bubble_pop {
+	position: absolute;
+	cursor: default;
+	border: 1px solid rgb(153, 153, 153);
+	background-color: rgb(255, 255, 255);
+	z-index:100000;
+}
+
+.Map_bubble_pop .Map_bubble_top {
+	border-bottom: 1px solid #ccc;
+}
+
+.Map_bubble_pop .Map_bubble_top .Map_bubble_title {
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: rgb(249, 249, 249);
+}
+
+.Map_bubble_pop .Map_bubble_top .Map_bubble_buttons {
+	float: right;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: #f9f9f9
+}
+
+.Map_bubble_pop .Map_bubble_top .Map_bubble_buttons img {
+	position: absolute;
+	top: 9px;
+	right: 12px;
+	width: 10px;
+	height: 10px;
+	-moz-user-select: none;
+	cursor: pointer;
+	z-index: 10000;
+}
+
+.Map_bubble_pop .Map_bubble_center {
+	z-index: 3;
+	position: relative;
+}
+.Map_bubble_pop .Map_bubble_center .Map_bubble_content{
+	overflow: hidden;
+}
+.iw_poi_title a.title:hover {
+	color: #3d6dcc;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: underline;
+}
+.iw_poi_title a.title {
+	color: #4d4d4d;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0;
+}
+
+.iw_poi_title a:hover,.iw_poi_conTop a:hover,.iw_poi_inter a:hover {
+	color: #3d6dcc;
+	text-decoration: underline;
+}
+.tail{
+	z-index: 1; position: absolute;
+}
+.Map_bubble_marker {
+	position: absolute;
+	cursor: pointer;
+	z-index:1000;
+}
+.Map_bubble_marker img{
+	position: relative;
+}
