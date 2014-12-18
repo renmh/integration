@@ -32,6 +32,7 @@ public class TestEntityServiceTest extends SpringTransactionalContextTests {
 		testEntityService.save(entity);
 		//删除
 		testEntityService.delete(entity.getId());
+		//测试版本库
 		TestCase.assertNotNull(entity.getCreateDate());
 	}
 }
