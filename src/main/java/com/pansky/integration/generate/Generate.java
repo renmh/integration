@@ -46,9 +46,9 @@ public class Generate {
 		
 		String moduleName = "test";			// 模块名，例：sys
 		String subModuleName = "test1";				// 子模块名（可选） 
-		String className = "TestEntity";			// 类名，例：user
+		String className = "test1";			// 类名，例：user
 		String classAuthor = "renmh";		// 类作者，例：ThinkGem
-		String functionName = "功能测试";			// 功能名，例：用户
+		String functionName = "功能";			// 功能名，例：用户
 
 		// 是否启用生成工具
 //		Boolean isEnable = false;

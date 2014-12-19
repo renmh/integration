@@ -10,38 +10,20 @@ import org.hibernate.validator.constraints.Length;
 import com.pansky.integration.common.persistence.IdEntity;
 
 /**
- * 功能测试Entity
+ * 功能Entity
  * @author renmh
- * @version 2014-12-10
+ * @version 2014-12-18
  */
 @Entity
-@Table(name = "test_test1_test")
+@Table(name = "test_test1_test1")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class TestEntity extends IdEntity<TestEntity> {
+public class Test1 extends IdEntity<Test1> {
 	
 	private static final long serialVersionUID = 1L;
 	private String dm; 		// 代码
 	private String name; 	// 名称
-	private String test1;
-	private String test2;
-	public String getTest1() {
-		return test1;
-	}
 
-	public void setTest1(String test1) {
-		this.test1 = test1;
-	}
-
-
-	public String getTest2() {
-		return test2;
-	}
-
-	public void setTest2(String test2) {
-		this.test2 = test2;
-	}
-
-	public TestEntity() {
+	public Test1() {
 		super();
 	}
 

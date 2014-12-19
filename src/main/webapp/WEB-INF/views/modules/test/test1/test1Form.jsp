@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>功能测试管理</title>
+	<title>功能管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -13,11 +13,11 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/test/test1/testEntity/">功能测试列表</a></li>
-		<li class="active"><a href="${ctx}/test/test1/testEntity/form?id=${testEntity.id}">功能测试<shiro:hasPermission name="test:test1:testEntity:edit">${not empty testEntity.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="test:test1:testEntity:edit">查看</shiro:lacksPermission></a></li>
+		<li><a href="${ctx}/test/test1/test1/">功能列表</a></li>
+		<li class="active"><a href="${ctx}/test/test1/test1/form?id=${test1.id}">功能<shiro:hasPermission name="test:test1:test1:edit">${not empty test1.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="test:test1:test1:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	
-	<form:form id="inputForm" modelAttribute="testEntity" action="${ctx}/test/test1/testEntity/save" method="post" class="form-horizontal">
+	<form:form id="inputForm" modelAttribute="test1" action="${ctx}/test/test1/test1/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<shiro:hasPermission name="test:test1:testEntity:edit">
+			<shiro:hasPermission name="test:test1:test1:edit">
 				<input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;
 			</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>

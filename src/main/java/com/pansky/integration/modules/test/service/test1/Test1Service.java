@@ -10,43 +10,43 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pansky.integration.common.persistence.Page;
 import com.pansky.integration.common.service.BaseService;
 import com.pansky.integration.common.utils.StringUtils;
-import com.pansky.integration.modules.test.dao.test1.TestDao;
-import com.pansky.integration.modules.test.entity.test1.TestEntity;
+import com.pansky.integration.modules.test.entity.test1.Test1;
+import com.pansky.integration.modules.test.dao.test1.Test1Dao;
 
 /**
- * 功能测试Service
+ * 功能Service
  * @author renmh
- * @version 2014-12-10
+ * @version 2014-12-18
  */
 @Component
 @Transactional(readOnly = true)
-public class TestService extends BaseService {
+public class Test1Service extends BaseService {
 
 	@Autowired
-	private TestDao testDao;
+	private Test1Dao test1Dao;
 	
-	public TestEntity get(String id) {
-		return testDao.get(id);
+	public Test1 get(String id) {
+		return test1Dao.get(id);
 	}
 	
-	public Page<TestEntity> find(Page<TestEntity> page, TestEntity test) {
-		DetachedCriteria dc = testDao.createDetachedCriteria();
-		if (StringUtils.isNotEmpty(test.getName())){
-			dc.add(Restrictions.like("name", "%"+test.getName()+"%"));
+	public Page<Test1> find(Page<Test1> page, Test1 test1) {
+		DetachedCriteria dc = test1Dao.createDetachedCriteria();
+		if (StringUtils.isNotEmpty(test1.getName())){
+			dc.add(Restrictions.like("name", "%"+test1.getName()+"%"));
 		}
-		dc.add(Restrictions.eq(TestEntity.FIELD_DEL_FLAG, TestEntity.DEL_FLAG_NORMAL));
+		dc.add(Restrictions.eq(Test1.FIELD_DEL_FLAG, Test1.DEL_FLAG_NORMAL));
 		dc.addOrder(Order.desc("id"));
-		return testDao.find(page, dc);
+		return test1Dao.find(page, dc);
 	}
 	
 	@Transactional(readOnly = false)
-	public void save(TestEntity test) {
-		testDao.save(test);
+	public void save(Test1 test1) {
+		test1Dao.save(test1);
 	}
 	
 	@Transactional(readOnly = false)
 	public void delete(String id) {
-		testDao.deleteById(id);
+		test1Dao.deleteById(id);
 	}
 	
 }

@@ -31,12 +31,11 @@
 
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
-		<mapping class="com.pansky.integration.modules.map.entity.MapData"/>
 		<mapping class="com.pansky.integration.modules.sys.entity.User"/>
 		<mapping class="com.pansky.integration.modules.sys.entity.Office"/>
 		<mapping class="com.pansky.integration.modules.sys.entity.Area"/>
 		<mapping class="com.pansky.integration.modules.sys.entity.Role"/>
 		<mapping class="com.pansky.integration.modules.sys.entity.Menu"/>
-		<mapping class="com.pansky.integration.modules.test.entity.test1.Test"/>
+		<mapping class="com.pansky.integration.modules.test.entity.test1.Test1"/>
     </session-factory>
 </hibernate-configuration>

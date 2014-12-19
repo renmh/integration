@@ -13,7 +13,7 @@ public class TestWebservice {
 	 * @throws Exception
 	 * @Description:
 	 */
-	//@Test
+	@Test
 	public void testWebService() throws Exception  {
         ClassPathXmlApplicationContext context 
             = new ClassPathXmlApplicationContext(new String[] {"cxf-client.xml"});
