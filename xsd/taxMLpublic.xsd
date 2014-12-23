@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by xdowns.com (xdowns.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="zsxmDm">
+		<xs:annotation>
+			<xs:documentation>征收项目代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zspmDm">
+		<xs:annotation>
+			<xs:documentation>征收品目代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swjgDm">
+		<xs:annotation>
+			<xs:documentation>税务机关代码（9位字符），可用于税务机关、纳税人税务机关、征收机关等</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swjgouDm">
+		<xs:annotation>
+			<xs:documentation>税务机构代码（11位字符），包括了税务机关和税务部门</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swjgjb">
+		<xs:annotation>
+			<xs:documentation>税务机关级别，用于协查系统（10－总局；20－省局；21－直辖市；30－市局）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="xzqhDm">
+		<xs:annotation>
+			<xs:documentation>行政区划代码（国标6位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swryDm">
+		<xs:annotation>
+			<xs:documentation>税务人员代码（11位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="czryDm">
+		<xs:annotation>
+			<xs:documentation>操作人员代码（11位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="xtsphm">
+		<xs:annotation>
+			<xs:documentation>税票号码（最大长度为20位的字符），系统中开具的内部税票号码，可唯一标识一张税票</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="pzzlDm">
+		<xs:annotation>
+			<xs:documentation>应征凭证种类代码（最大长度为5位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fpzlDm">
+		<xs:annotation>
+			<xs:documentation>发票种类代码（最大长度为5位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fpDm">
+		<xs:annotation>
+			<xs:documentation>发票代码（最大长度为17位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="17"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="spzlDm">
+		<xs:annotation>
+			<xs:documentation>税票种类代码（最大长度为5位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sbfsDm">
+		<xs:annotation>
+			<xs:documentation>申报方式代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hymxDm">
+		<xs:annotation>
+			<xs:documentation>行业明细代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hyDm">
+		<xs:annotation>
+			<xs:documentation>行业代码（最大长度6位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="djzclxDm">
+		<xs:annotation>
+			<xs:documentation>登记注册类型代码（3位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="jkfsDm">
+		<xs:annotation>
+			<xs:documentation>征缴方式（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zsfsDm">
+		<xs:annotation>
+			<xs:documentation>征收方式（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsqxDm">
+		<xs:annotation>
+			<xs:documentation>纳税期限（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="wszlDm">
+		<xs:annotation>
+			<xs:documentation>文书种类（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swwsDm">
+		<xs:annotation>
+			<xs:documentation>税务文书代码(6位字符)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yskmDm">
+		<xs:annotation>
+			<xs:documentation>预算科目代码（6-9位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="6"/>
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ysfpblDm">
+		<xs:annotation>
+			<xs:documentation>预算分配比例代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ttlxDm">
+		<xs:annotation>
+			<xs:documentation>提退类型（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sksxDm">
+		<xs:annotation>
+			<xs:documentation>税款属性（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsrztDm">
+		<xs:annotation>
+			<xs:documentation>纳税人状态代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsrzgDm">
+		<xs:annotation>
+			<xs:documentation>纳税人资格代码（最大长度为3位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yhzlDm">
+		<xs:annotation>
+			<xs:documentation>银行种类代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yhDm">
+		<xs:annotation>
+			<xs:documentation>银行代码（最长12位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="skgkDm">
+		<xs:annotation>
+			<xs:documentation>收款国库代码（最长10位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="frzjlxDm">
+		<xs:annotation>
+			<xs:documentation>证件类型代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="lsgxDm">
+		<xs:annotation>
+			<xs:documentation>隶属关系代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="jdxzDm">
+		<xs:annotation>
+			<xs:documentation>街道乡镇代码（10位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="szscDm">
+		<xs:annotation>
+			<xs:documentation>所在市场代码（11位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tkyyDm">
+		<xs:annotation>
+			<xs:documentation>退库原因代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="jyfsDm">
+		<xs:annotation>
+			<xs:documentation>经营方式（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="swdjblxDm">
+		<xs:annotation>
+			<xs:documentation>税务登记表类型代码（1-2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bzDm">
+		<xs:annotation>
+			<xs:documentation>币种代码（3位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gjDm">
+		<xs:annotation>
+			<xs:documentation>国家代码（3位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsrsbh">
+		<xs:annotation>
+			<xs:documentation>纳税人识别号（长度为15—30位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="15"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsrmc">
+		<xs:annotation>
+			<xs:documentation>纳税人名称（最大长度为80位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sj">
+		<xs:annotation>
+			<xs:documentation>通用时间点（精确到秒，14位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="rq">
+		<xs:annotation>
+			<xs:documentation>通用日期（8位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nd">
+		<xs:annotation>
+			<xs:documentation>年度（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yf">
+		<xs:annotation>
+			<xs:documentation>月份（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="wh">
+		<xs:annotation>
+			<xs:documentation>文号（最大长度为10位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zh">
+		<xs:annotation>
+			<xs:documentation>帐号（最大长度为50位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="lc">
+		<xs:annotation>
+			<xs:documentation>栏次（长整型）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:long"/>
+	</xs:simpleType>
+	<xs:simpleType name="zs">
+		<xs:annotation>
+			<xs:documentation>整数（如次数、份数、户数、架数、件数、发票张数、联数、辆数、年龄、人数、台数、天数等）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:long"/>
+	</xs:simpleType>
+	<xs:simpleType name="shuliang">
+		<xs:annotation>
+			<xs:documentation>数量（浮点数16，2）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="je">
+		<xs:annotation>
+			<xs:documentation>金额（浮点数16，2）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="fphm">
+		<xs:annotation>
+			<xs:documentation>发票号码（最大长度为10位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bz">
+		<xs:annotation>
+			<xs:documentation>标志（1位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sl">
+		<xs:annotation>
+			<xs:documentation>税率（浮点数10，6）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="dz">
+		<xs:annotation>
+			<xs:documentation>地址（80位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="qx">
+		<xs:annotation>
+			<xs:documentation>期限（整数）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="jg">
+		<xs:annotation>
+			<xs:documentation>局轨（20位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zg">
+		<xs:annotation>
+			<xs:documentation>字轨（20位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tyxh">
+		<xs:annotation>
+			<xs:documentation>通用序号（最大长度为32位的字符串，可用于应征凭证序号、文书凭证序号、申报序号、附表序号、财务报表序号等）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yssphm">
+		<xs:annotation>
+			<xs:documentation>印刷税票号码（最大长度为20位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="mc">
+		<xs:annotation>
+			<xs:documentation>通用名称（最大长度为80位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yzbm">
+		<xs:annotation>
+			<xs:documentation>邮政编码（6位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dhhm">
+		<xs:annotation>
+			<xs:documentation>电话号码（最大长度为60位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="beizhu">
+		<xs:annotation>
+			<xs:documentation>备注（最大长度为1000位的字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bfl">
+		<xs:annotation>
+			<xs:documentation>百分率（浮点型10、6）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="sykhdjg">
+		<xs:annotation>
+			<xs:documentation>税银库核对结果（3位编码）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ywhjDm">
+		<xs:annotation>
+			<xs:documentation>业务环节代码（6位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gsjgDm">
+		<xs:annotation>
+			<xs:documentation>工商机关代码（8位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fprzbz">
+		<xs:annotation>
+			<xs:documentation>发票认证标志，用于防伪税控和稽核系统（0－认证相符；1－认证不符；2－重复认证；3－属丢失被盗发票；4－属丢失被盗金税卡开具发票；5－密文有误；6－无法认证）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zzlbDm">
+		<xs:annotation>
+			<xs:documentation>执照类别代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hsxsDm">
+		<xs:annotation>
+			<xs:documentation>核算形式代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sykjzdDm">
+		<xs:annotation>
+			<xs:documentation>适用会计制度代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dwxzDm">
+		<xs:annotation>
+			<xs:documentation>单位性质代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hgqyDm">
+		<xs:annotation>
+			<xs:documentation>海关企业代码（10位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ny">
+		<xs:annotation>
+			<xs:documentation>年月（6位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="jldwDm">
+		<xs:annotation>
+			<xs:documentation>计量单位代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fds206">
+		<xs:annotation>
+			<xs:documentation>浮点数20，6</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="20"/>
+			<xs:fractionDigits value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="jckBgdh">
+		<xs:annotation>
+			<xs:documentation>进出口报关单号（最长21位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hth">
+		<xs:annotation>
+			<xs:documentation>合同号(最长20位字符)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="whrmbpj">
+		<xs:annotation>
+			<xs:documentation>外汇人民币牌价(浮点数12，6)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="12"/>
+			<xs:fractionDigits value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hggqDm">
+		<xs:annotation>
+			<xs:documentation>海关关区代码（4位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ysfsDm">
+		<xs:annotation>
+			<xs:documentation>运输方式代码（1位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="myfsDm">
+		<xs:annotation>
+			<xs:documentation>贸易方式代码(4位字符)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="qyzzjgDm">
+		<xs:annotation>
+			<xs:documentation>企业组织机构代码（9位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ysjcDm">
+		<xs:annotation>
+			<xs:documentation>预算级次代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nsrxydjDm">
+		<xs:annotation>
+			<xs:documentation>纳税人信誉等级代码(2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zzsnsrlxDm">
+		<xs:annotation>
+			<xs:documentation>增值税纳税人类型代码(2位字符) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="cwbbzlDm">
+		<xs:annotation>
+			<xs:documentation>财务报表种类代码(2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gdzczjfsDm">
+		<xs:annotation>
+			<xs:documentation>固定资产折旧方式代码（2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yhkllbDm">
+		<xs:annotation>
+			<xs:documentation>银行开立类别代码(2位字符）</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dzyhptxff">
+		<xs:annotation>
+			<xs:documentation>低值易耗品摊销方法(2位字符) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zhxzDm">
+		<xs:annotation>
+			<xs:documentation>帐号性质代码(2位字符) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

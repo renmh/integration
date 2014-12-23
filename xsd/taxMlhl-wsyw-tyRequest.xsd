@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by think (EMBRACE) -->
+<xsd:schema xmlns="http://www.chinatax.gov.cn/dataspec/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.chinatax.gov.cn/dataspec/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="taxDoc.xsd"/>
+	<xsd:complexType name="wsywTyRequest">
+		<xsd:annotation>
+			<xsd:documentation>网上业务通用请求报文</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="taxDoc">
+				<xsd:sequence>
+					<xsd:element name="wsywTyReqBody" type="wsywTyReqItem">
+						<xsd:annotation>
+							<xsd:documentation>网上业务通用请求报文请求信息</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="wsywTyReqItem">
+		<xsd:annotation>
+			<xsd:documentation>网上业务通用请求报文请求信息</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="zsjgDm" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>征收机关代码</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="nsrsbh" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>纳税人识别号</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="xzqh" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>行政区划代码</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

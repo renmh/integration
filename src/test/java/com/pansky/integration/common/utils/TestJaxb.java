@@ -22,4 +22,16 @@ public class TestJaxb {
 		String ss=JaxbMapper.toXml(tiripPackageType);
 		System.out.println(ss);
 	}
+	/**
+	 * 测试String转换
+	 * 
+	 * @Description:
+	 */
+	@Test
+	public void testString(){
+		String className=this.getClass().getName();
+		className=className.substring(className.lastIndexOf(".")+1);
+		className=className.replaceFirst(className.substring(0,1), className.substring(0,1).toLowerCase());
+		System.out.println(className);
+	}
 }

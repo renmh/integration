@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by think (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="taxMLpublic.xsd"/>
+	<xs:complexType name="returnInfo">
+		<xs:annotation>
+			<xs:documentation>整合公用返回信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>返回结果代码</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnMessage" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>处理结果描述</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wsywTyRespBody">
+		<xs:annotation>
+			<xs:documentation>网上业务通用响应信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="tyResult" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>通用结果字符串</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnInfo" type="returnInfo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>返回结果及描述</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

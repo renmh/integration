@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by xdowns.com (xdowns.com) -->
+<xsd:schema xmlns="http://www.chinatax.gov.cn/dataspec/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.chinatax.gov.cn/dataspec/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="taxDoc.xsd"/>
+	<xsd:include schemaLocation="taxMLWsywpublic.xsd"/>
+	<xsd:include schemaLocation="taxMLpublic.xsd"/>
+	<xsd:complexType name="wsywTyResponse">
+		<xsd:annotation>
+			<xsd:documentation>网上业务通用响应报文</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="taxDoc">
+				<xsd:sequence>
+					<xsd:element name="wsywTyResp" type="wsywTyRespBody">
+						<xsd:annotation>
+							<xsd:documentation>网上业务通用请求报文请求信息</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,2 @@
+xjc -encoding utf-8 -p com.pansky.integration.common.soa.xmlBean.bussbusinessContent taxMlhl-wsyw-tyRequest.xsd
+xjc -encoding utf-8 -p com.pansky.integration.common.soa.xmlBean.bussbusinessContent taxMlhl-wsyw-tyResponse.xsd
